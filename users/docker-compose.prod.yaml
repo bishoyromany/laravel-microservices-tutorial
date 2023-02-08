@@ -2,7 +2,7 @@ version: '3'
 services:
   users_backend:
     build: .
-    image: antoniopapa/users:0.0.1
+    image: bishoyromany/users:0.0.1
     environment:
       DB_HOST:
       DB_PORT: 3306

@@ -5,3 +5,9 @@ services:
     volumes:
       - .:/app
     command: 'php artisan queue:work'
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025

@@ -2,7 +2,7 @@ version: '3'
 services:
   email_queue:
     build: .
-    image: antoniopapa/email:0.0.1
+    image: bishoyromany/email:0.0.1
     environment:
       MAIL_MAILER: smtp
       MAIL_HOST: smtp.mailtrap.io
@@ -16,5 +16,11 @@ services:
       SASL_USERNAME:
       SASL_PASSWORD:
       SASL_MECHANISMS: PLAIN
-      GROUP_ID: 
+      GROUP_ID:
     command: 'php artisan queue:work'
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
